@@ -5,17 +5,44 @@
 
 > Face recognition
 
+## Required
+
+Add 2 folder
+```sh
+dataset/*
+
+videos/*
+```
+
+## Create data from video
+
+```sh
+python3 gather_examples.py --input videos/quan.m4v --output dataset/quan --detector face_detector --skip 6 --name quan
+```
+
 ## Install
 
 ```sh
 pip install requirements.txt
 ```
 
+## Train
+
+```sh
+python3 train.py --dataset dataset --model thien.model --labelbin lb.pickle
+```
+
+## Convert Model to to CoreML
+
+```sh
+python3 coremlconverter.py --model thien.model --labelbin lb.pickle
+```
+<!-- 
 ## Run tests
 
 ```sh
 python test
-```
+``` -->
 
 ## Author
 
